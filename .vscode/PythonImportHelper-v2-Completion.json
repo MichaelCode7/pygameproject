@@ -1,0 +1,134 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "pygame",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygame",
+        "description": "pygame",
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Player",
+        "importPath": "player",
+        "description": "player",
+        "isExtraImport": true,
+        "detail": "player",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "general_funcs",
+        "description": "general_funcs",
+        "isExtraImport": true,
+        "detail": "general_funcs",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "general_funcs",
+        "description": "general_funcs",
+        "isExtraImport": true,
+        "detail": "general_funcs",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "load_image",
+        "kind": 2,
+        "importPath": "source.general_funcs",
+        "description": "source.general_funcs",
+        "peekOfCode": "def load_image(name):\n    fullname = os.path.join('data', name)\n    if not os.path.isfile(fullname):\n        print(f\"Файл с изображением '{fullname}' не найден\")\n        sys.exit()\n    image = pygame.image.load(fullname)\n    return image\n# textures container and vars\n# in the future I plan to implement the character from different angles using a sprite sheets\ntextures_container = {",
+        "detail": "source.general_funcs",
+        "documentation": {}
+    },
+    {
+        "label": "textures_container",
+        "kind": 5,
+        "importPath": "source.general_funcs",
+        "description": "source.general_funcs",
+        "peekOfCode": "textures_container = {\n    'app_icon': load_image('imgs/potion_main_icon.png'),\n    'player_img': load_image('imgs/entitysheets/player.png')\n}\nSIZE = (1200, 800)\nWIGTH, HEIGHT = SIZE\nFPS = 35",
+        "detail": "source.general_funcs",
+        "documentation": {}
+    },
+    {
+        "label": "SIZE",
+        "kind": 5,
+        "importPath": "source.general_funcs",
+        "description": "source.general_funcs",
+        "peekOfCode": "SIZE = (1200, 800)\nWIGTH, HEIGHT = SIZE\nFPS = 35",
+        "detail": "source.general_funcs",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "kind": 5,
+        "importPath": "source.general_funcs",
+        "description": "source.general_funcs",
+        "peekOfCode": "FPS = 35",
+        "detail": "source.general_funcs",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "source.main",
+        "description": "source.main",
+        "peekOfCode": "def main():\n    # preload\n    main_icon = textures_container.get('app_icon')\n    pygame.mouse.set_visible(False)\n    pygame.display.set_caption('Исследование подземелий')\n    pygame.display.set_icon(main_icon)\n    screen = pygame.display.set_mode(SIZE)\n    running = True\n    clock = pygame.time.Clock()\n    # main load",
+        "detail": "source.main",
+        "documentation": {}
+    },
+    {
+        "label": "all_sprites",
+        "kind": 5,
+        "importPath": "source.main",
+        "description": "source.main",
+        "peekOfCode": "all_sprites = pygame.sprite.Group()\ndef main():\n    # preload\n    main_icon = textures_container.get('app_icon')\n    pygame.mouse.set_visible(False)\n    pygame.display.set_caption('Исследование подземелий')\n    pygame.display.set_icon(main_icon)\n    screen = pygame.display.set_mode(SIZE)\n    running = True\n    clock = pygame.time.Clock()",
+        "detail": "source.main",
+        "documentation": {}
+    },
+    {
+        "label": "Player",
+        "kind": 6,
+        "importPath": "source.player",
+        "description": "source.player",
+        "peekOfCode": "class Player(pygame.sprite.Sprite):\n    def __init__(self, sprite_groups=[]):\n        super().__init__(*sprite_groups)\n        self.image = textures_container.get('player_img')\n        self.rect = self.image.get_rect()\n        # self.rect.x = 100\n        # self.rect.y = 100\n    def update(self):\n        # self.rect.x += 1\n        # self.rect.y += math.sin(self.rect.x) * 10",
+        "detail": "source.player",
+        "documentation": {}
+    }
+]
